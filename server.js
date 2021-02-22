@@ -59,7 +59,7 @@ app.delete('/api/persons/:id', (req, res) => {
 })
 
 // Log of persons in phone adress book.
-app.get('/info', (req, res) => {
+app.get('/api/info', (req, res) => {
   res.send(
     `<p>Phonebook has info for ${persons.length} people</p>
     <p>${new Date()}</p>`,
@@ -103,7 +103,7 @@ app.post('/api/persons', (req, res) => {
     id: generateId(),
   }
   persons = persons.concat(person)
-  response.json(person)
+  res.json(person)
 })
 
 // Server connection.
